@@ -1,6 +1,6 @@
 resource "aws_launch_template" "web_server_as" {
     name = "myproject"
-    image_id           = "ami-0454e52560c7f5c55"
+    image_id           = "ami-0e58b56aa4d64231b"
     vpc_security_group_ids = [aws_security_group.web_server.id]
     instance_type = "t2.micro"
     key_name = "lastone"
@@ -15,7 +15,7 @@ resource "aws_launch_template" "web_server_as" {
   resource "aws_elb" "web_server_lb"{
      name = "web-server-lb"
      security_groups = [aws_security_group.web_server.id]
-     subnets = ["subnet-024286466e258f339", "subnet-09558309acf4661a8"]
+     subnets = ["subnet-0b0a4952adcd934c2","subnet-02ea9cda98f6d7e10"]
      listener {
       instance_port     = 8000
       instance_protocol = "http"
